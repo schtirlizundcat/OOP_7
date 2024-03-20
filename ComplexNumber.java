@@ -8,6 +8,10 @@ class ComplexNumber {
         this.imaginary = imaginary;
     }
 
+    public double getReal() {return real;}
+
+    public double getImaginary() {return imaginary;}
+
     // Метод сложения комплексных чисел
     public ComplexNumber add(ComplexNumber num) {
         return new ComplexNumber(this.real + num.real, this.imaginary + num.imaginary);
@@ -38,6 +42,8 @@ class ComplexNumber {
 
     @Override
     public String toString() {
-        return real + " + " + imaginary + "i";
+        String imaginarySign = " + ";
+        if (imaginary < 0.0) imaginarySign = " ";
+        return real + imaginarySign + imaginary + " i";
     }
 }
